@@ -1,20 +1,21 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-RUN apk update && apk add --no-cache \
-    python3 \   
-    py3-pip \
-    git
+# Install dependencies, create venv, upgrade pip, install inetbox.py
+RUN apk add --no-cache python3 py3-pip git \
+    && python3 -m venv /inetbox \
+    && /inetbox/bin/pip install --upgrade pip \
+    && /inetbox/bin/pip install git+https://github.com/danielfett/inetbox.py@master \
+    && mkdir -p /inetbox/mqtt_auto_discovery_objs
 
-COPY inetbox.yml /etc/miqro.yml    
-RUN python -m venv /inetbox
-ENV PATH="/inetbox/bin:$PATH"
-RUN pip3 install -U git+https://github.com/danielfett/inetbox.py@master
-
-
-RUN mkdir -p /inetbox/mqtt_auto_discovery_objs
-COPY mqtt_auto_discovery_objs/* /inetbox/mqtt_auto_discovery_objs/
-
+# Copy configuration and discovery objects
+COPY inetbox.yml /etc/miqro.yml
+COPY mqtt_auto_discovery_objs /inetbox/mqtt_auto_discovery_objs/
 COPY run.py /inetbox/
 RUN chmod a+x /inetbox/run.py
-CMD [ "/inetbox/run.py" ]
+
+# Add venv to PATH
+ENV PATH="/inetbox/bin:$PATH"
+
+# Start the application
+CMD ["/inetbox/run.py"]
