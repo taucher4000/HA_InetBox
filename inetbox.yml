@@ -4,8 +4,8 @@ broker:
   keepalive: 60
   
 auth: 
-  username: "truma"
-  password: "truma"
+  username: ""
+  password: ""
 
 log_level: INFO
 
