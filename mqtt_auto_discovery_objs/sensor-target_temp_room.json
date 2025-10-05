@@ -1,0 +1,8 @@
+{
+    "name": "Target Temperature Room",
+    "unique_id": "target_temp_room",
+    "device_class": "temperature",
+    "unit_of_measurement": "°C",
+    "state_topic": "service/truma/control_status/target_temp_room",
+    "retain": true
+}

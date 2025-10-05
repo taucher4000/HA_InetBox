@@ -1,0 +1,28 @@
+name: "Inetbox"
+description: "Truma iNet box for controlling the Truma Combi heater"
+version: "0.0.1"
+slug: "inet_box"
+init: false
+uart: true
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+
+options:
+  MQTTBroker: "core-mosquitto"
+  MQTTUser: ""
+  MQTTPassword: ""
+  SerialDevice: "/dev/serial0"
+  DefaultTargetTempRoom: 22
+
+schema:
+  MQTTBroker: str
+  MQTTUser: str?
+  MQTTPassword: str?
+  SerialDevice: str
+  DefaultTargetTempRoom: int
+
+
