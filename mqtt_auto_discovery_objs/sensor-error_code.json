@@ -1,6 +1,5 @@
 {
     "name": "Error Code",
     "unique_id": "error_code",
-    "state_topic": "service/truma/control_status/error_code",
-    "retain": true
+    "state_topic": "service/truma/control_status/error_code"
 }

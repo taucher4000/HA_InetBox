@@ -6,7 +6,6 @@
   "min_temp": 5,
   "max_temp": 30,
   "temp_step": 1,
-  "retain": true,
   "mode_command_topic": "service/truma/set/heating_mode",
   "mode_command_template": "{% if value=='heat' %}eco{% else %}off{% endif %}",
   "mode_state_topic": "service/truma/control_status/heating_mode",
