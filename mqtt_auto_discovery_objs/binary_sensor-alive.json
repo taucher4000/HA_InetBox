@@ -1,7 +1,0 @@
-{
-    "name": "alive",
-    "unique_id": "alive",
-    "state_topic": "service/truma/control_status/alive",
-    "device_class": "running",
-    "retain": true
-}
