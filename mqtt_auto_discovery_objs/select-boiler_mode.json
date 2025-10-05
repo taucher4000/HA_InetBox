@@ -1,5 +1,5 @@
 {
-    "name": "Truma Wasser Modus",
+    "name": "Boiler Mode",
     "unique_id": "boiler_mode",
     "command_topic": "service/truma/set/target_temp_water",
     "command_template": "{{ 0 if value == 'off' else 40 if value == 'eco' else 60 }}",
