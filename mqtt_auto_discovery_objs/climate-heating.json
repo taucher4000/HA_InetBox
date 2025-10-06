@@ -1,6 +1,6 @@
 {
   "name": "Heating",
-  "unique_id": "heating_main_control",
+  "unique_id": "heating",
   "modes": ["off", "heat"],
   "fan_modes": ["low", "high"],
   "min_temp": 5,
