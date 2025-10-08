@@ -12,7 +12,7 @@ import random
 
 CONFIG_FILE = Path("/etc/miqro.yml")
 OPTIONS_FILE = Path("/data/options.json")
-DISCOVERY_DIR = Path("/inetbox/mqtt_auto_discovery_objs/")
+DISCOVERY_DIR = Path("/src/mqtt_auto_discovery_objs/")
 MIQRO_CONFIG = {
     "broker": {
         "host": "core-mosquitto",
