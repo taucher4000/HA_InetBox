@@ -3,7 +3,6 @@ name = "inetbox-py"
 version = "0.3"
 description = ""
 authors = ["Daniel Fett <fett@danielfett.de>"]
-readme = "README.md"
 packages = [{include = "inetbox"}]
 
 [tool.poetry.dependencies]
