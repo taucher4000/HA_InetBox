@@ -13,7 +13,6 @@ import random
 CONFIG_FILE = Path("/etc/miqro.yml")
 OPTIONS_FILE = Path("/data/options.json")
 DISCOVERY_DIR = Path("/inetbox/mqtt_auto_discovery_objs/")
-LOG_LEVEL = "INFO"
 
 def load_yaml(path: Path) -> dict:
     with path.open("r", encoding="utf-8") as f:
@@ -38,9 +37,9 @@ miqro_config["auth"]["password"] = ha_options["MQTTPassword"]
 miqro_config["services"]["truma"]["default_target_temp_room"] = ha_options["DefaultTargetTempRoom"]
 miqro_config["services"]["truma"]["serial_device"] = ha_options["SerialDevice"]
 
-miqro_config["services"]["truma"]["debug_app"] = ha_options["DebugMode"]
-miqro_config["services"]["truma"]["debug_lin"] = ha_options["DebugMode"]
-miqro_config["services"]["truma"]["debug_protocol"] = ha_options["DebugMode"]
+miqro_config["services"]["truma"]["debug_app"] = ha_options["DebugApp"]
+miqro_config["services"]["truma"]["debug_lin"] = ha_options["DebugLin"]
+miqro_config["services"]["truma"]["debug_protocol"] = ha_options["DebugProtocol"]
 
 save_yaml(miqro_config, CONFIG_FILE)
 
