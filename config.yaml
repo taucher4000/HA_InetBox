@@ -17,6 +17,7 @@ options:
   MQTTPassword: ""
   SerialDevice: "/dev/serial0"
   DefaultTargetTempRoom: 22
+  DebugMode: false
 
 schema:
   MQTTBroker: str
@@ -24,5 +25,4 @@ schema:
   MQTTPassword: str?
   SerialDevice: str
   DefaultTargetTempRoom: int
-
-
+  DebugMode: bool

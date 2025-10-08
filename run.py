@@ -13,7 +13,7 @@ import random
 CONFIG_FILE = Path("/etc/miqro.yml")
 OPTIONS_FILE = Path("/data/options.json")
 DISCOVERY_DIR = Path("/inetbox/mqtt_auto_discovery_objs/")
-
+LOG_LEVEL = "INFO"
 
 def load_yaml(path: Path) -> dict:
     with path.open("r", encoding="utf-8") as f:
@@ -29,11 +29,13 @@ def load_json(path: Path) -> dict:
     with path.open("r", encoding="utf-8") as f:
         return json.load(f)
 
-
-
 miqro_config = load_yaml(CONFIG_FILE)
 ha_options = load_json(OPTIONS_FILE)
 
+if ha_options["DebugMode"]:
+    LOG_LEVEL = "DEBUG"
+
+miqro_config["log_level"] = LOG_LEVEL
 miqro_config["broker"]["host"] = ha_options["MQTTBroker"]
 miqro_config["auth"]["username"] = ha_options["MQTTUser"]
 miqro_config["auth"]["password"] = ha_options["MQTTPassword"]
