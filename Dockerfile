@@ -13,7 +13,7 @@ RUN apk add --no-cache python3 py3-pip git \
     && python3 -m venv /inetbox \
     && /inetbox/bin/pip install --upgrade pip \
     #&& /inetbox/bin/pip install git+https://github.com/taucher4000/inetbox.py@master \
-    && /inetbox/bin/pip install -e /src \
+    && /inetbox/bin/pip install -e /src
 
 # Add venv to PATH
 ENV PATH="/inetbox/bin:$PATH"
