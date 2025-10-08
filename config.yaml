@@ -22,7 +22,7 @@ options:
 schema:
   MQTTBroker: str
   MQTTUser: str?
-  MQTTPassword: str?
+  MQTTPassword: password?
   SerialDevice: str
   DefaultTargetTempRoom: int
   DebugMode: bool

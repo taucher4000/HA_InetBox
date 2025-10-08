@@ -32,15 +32,15 @@ def load_json(path: Path) -> dict:
 miqro_config = load_yaml(CONFIG_FILE)
 ha_options = load_json(OPTIONS_FILE)
 
-if ha_options["DebugMode"]:
-    LOG_LEVEL = "DEBUG"
-
-miqro_config["log_level"] = LOG_LEVEL
 miqro_config["broker"]["host"] = ha_options["MQTTBroker"]
 miqro_config["auth"]["username"] = ha_options["MQTTUser"]
 miqro_config["auth"]["password"] = ha_options["MQTTPassword"]
 miqro_config["services"]["truma"]["default_target_temp_room"] = ha_options["DefaultTargetTempRoom"]
 miqro_config["services"]["truma"]["serial_device"] = ha_options["SerialDevice"]
+
+miqro_config["services"]["truma"]["debug_app"] = ha_options["DebugMode"]
+miqro_config["services"]["truma"]["debug_lin"] = ha_options["DebugMode"]
+miqro_config["services"]["truma"]["debug_protocol"] = ha_options["DebugMode"]
 
 save_yaml(miqro_config, CONFIG_FILE)
 
