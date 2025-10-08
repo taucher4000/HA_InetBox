@@ -5,7 +5,7 @@ FROM $BUILD_FROM
 RUN apk add --no-cache python3 py3-pip git \
     && python3 -m venv /inetbox \
     && /inetbox/bin/pip install --upgrade pip \
-    && /inetbox/bin/pip install git+https://github.com/danielfett/inetbox.py@master \
+    && /inetbox/bin/pip install git+https://github.com/taucher4000/inetbox.py@master \
     && mkdir -p /inetbox/mqtt_auto_discovery_objs
 
 # Copy configuration and discovery objects
