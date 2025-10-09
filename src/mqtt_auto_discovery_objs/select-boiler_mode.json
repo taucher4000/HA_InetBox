@@ -5,5 +5,6 @@
     "command_template": "{{ 0 if value == 'off' else 40 if value == 'eco' else 60 }}",
     "state_topic": "service/truma/control_status/target_temp_water",
     "value_template": "{{ 'off' if value == '0' else 'eco' if value == '40' else 'high' }}",
-    "options": ["off", "eco", "high"]
+    "options": ["off", "eco", "high"],
+    "optimistic": true
 }
