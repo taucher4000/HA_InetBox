@@ -1,0 +1,7 @@
+{
+  "name": "alive",
+  "unique_id": "alive",
+  "state_topic": "service/truma/cp_plus_status",
+  "payload_on": "online",
+  "expire_after": 90
+}
