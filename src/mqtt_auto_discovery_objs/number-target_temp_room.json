@@ -3,6 +3,9 @@
     "unique_id": "target_temp_room",
     "device_class": "temperature",
     "unit_of_measurement": "°C",
+    "min": 0,
+    "max": 30,
+    "step": 1,
     "state_topic": "service/truma/control_status/target_temp_room",
     "command_topic": "service/truma/set/target_temp_room"
 }
