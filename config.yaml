@@ -17,12 +17,16 @@ options:
   MQTTPassword: ""
   SerialDevice: "/dev/serial0"
   DefaultTargetTempRoom: 22
+  DebugApp: false
+  DebugLin: false
+  DebugProtocol: false
 
 schema:
   MQTTBroker: str
   MQTTUser: str?
-  MQTTPassword: str?
+  MQTTPassword: password?
   SerialDevice: str
   DefaultTargetTempRoom: int
-
-
+  DebugApp: bool
+  DebugLin: bool
+  DebugProtocol: bool
