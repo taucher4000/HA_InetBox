@@ -8,5 +8,7 @@
     "step": 1,
     "optimistic": true,
     "state_topic": "service/truma/control_status/target_temp_room",
-    "command_topic": "service/truma/set/target_temp_room"
+    "value_template": "{{ value | int }}",
+    "command_topic": "service/truma/set/target_temp_room",
+    "command_template": "{{ value | int }}"
 }
