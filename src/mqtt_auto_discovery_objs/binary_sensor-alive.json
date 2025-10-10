@@ -4,5 +4,6 @@
     "state_topic": "service/truma/cp_plus_status",
     "payload_on": "online",
     "payload_off": "offline",
-    "expire_after": 90
+    "expire_after": 90,
+    "icon": "mdi:eye-outline"
 }
