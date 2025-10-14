@@ -27,7 +27,8 @@ MIQRO_CONFIG = {
     "services": {
         "truma": {
             "serial_device": "/dev/serial0",
-            "default_target_temp_room": 22
+            "default_target_temp_room": 22,
+            "set_time": True
         }
     }
 }
