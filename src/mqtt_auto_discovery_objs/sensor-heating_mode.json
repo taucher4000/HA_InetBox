@@ -1,0 +1,6 @@
+{
+    "name": "Heating mode",
+    "unique_id": "heating_mode",
+    "state_topic": "service/truma/control_status/heating_mode",
+    "icon": "mdi:radiator"
+}

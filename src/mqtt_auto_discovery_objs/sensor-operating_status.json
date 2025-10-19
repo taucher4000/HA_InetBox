@@ -1,0 +1,6 @@
+{
+    "name": "Operating Status",
+    "unique_id": "operating_status",
+    "state_topic": "service/truma/control_status/operating_status",
+    "icon": "mdi:list-status"
+}

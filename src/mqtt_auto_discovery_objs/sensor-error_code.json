@@ -1,0 +1,6 @@
+{
+    "name": "Error Code",
+    "unique_id": "error_code",
+    "state_topic": "service/truma/control_status/error_code",
+    "icon": "mdi:alert-circle"
+}

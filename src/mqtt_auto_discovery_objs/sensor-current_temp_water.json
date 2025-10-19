@@ -1,0 +1,8 @@
+{
+    "name": "Current Temperature Water",
+    "unique_id": "current_temp_water",
+    "device_class": "temperature",
+    "unit_of_measurement": "°C",
+    "state_topic": "service/truma/control_status/current_temp_water",
+    "icon": "mdi:thermometer-water"
+}
