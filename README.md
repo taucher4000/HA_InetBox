@@ -1,7 +1,5 @@
 # Home Assistant Add-on: Truma InetBox Emulator
 
-⚠️ THIS IS STILL IN PROGRESS AND IS NOT YET READY FOR USE ⚠️
-
 This Home Assistant add-on emulates a **Truma InetBox** to control a **Truma Combi Heater** via a UART LIN adapter.  
 It is based on the [inetbox.py](https://github.com/danielfett/inetbox.py) implementation by [@danielfett](https://github.com/danielfett), and integrates seamlessly into Home Assistant through MQTT Auto Discovery.  
 
@@ -29,9 +27,34 @@ With this add-on, you can control your Truma heating system directly from Home A
 
 ---
 
-## ⚙️ Configuration
+## 🚀 Installation
 
-Configuration details will be provided in a future update.  
+1. In **Home Assistant**, go to **Settings → Add-ons → Add-on Store**  
+2. Click the **⋮ (three dots)** menu in the top right and choose **Repositories**  
+3. Add the repository URL: `https://github.com/taucher4000/HA_InetBox`
+4. Return to the Add-on Store, locate **InetBox**, and install it  
+5. After installation, click **Start** to launch the add-on  
+6. *(Optional)* Check the **Logs** tab to verify successful startup
+
+---
+
+## 🔧 Configuration
+
+The add-on can be configured via the **Configuration** tab in the Add-on settings.  
+Below is a list of all available options and their meaning.
+
+| Option | Type | Default | Description |
+|--------|------|----------|-------------|
+| `MQTTBroker` | `string` | `core-mosquitto` | Hostname or service name of your MQTT broker. Use `core-mosquitto` if using the Home Assistant MQTT add-on. |
+| `MQTTUser` | `string` *(optional)* | `""` | MQTT username if your broker requires authentication. Leave empty if not needed. |
+| `MQTTPassword` | `password` *(optional)* | `""` | MQTT password for the given user. |
+| `SerialDevice` | `string` | `/dev/serial0` | Path to the serial device connected to your InetBox. Adjust if using a different port. |
+| `DefaultTargetTempRoom` | `integer` | `22` | Default room temperature target (°C) sent to the device if no specific value is set. |
+| `DebugApp` | `boolean` | `false` | Enables debugging output for the main application logic. |
+| `DebugLin` | `boolean` | `false` | Enables debug output for LIN (Local Interconnect Network) communication. |
+| `DebugProtocol` | `boolean` | `false` | Enables detailed protocol debugging output. |
+| `SetTime` | `boolean` | `true` | If enabled, automatically sets the InetBox system time from Home Assistant at startup. |
+
 
 ---
 
