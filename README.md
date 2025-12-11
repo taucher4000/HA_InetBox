@@ -54,7 +54,7 @@ Below is a list of all available options and their meaning.
 | `DebugLin` | `boolean` | `false` | Enables debug output for LIN (Local Interconnect Network) communication. |
 | `DebugProtocol` | `boolean` | `false` | Enables detailed protocol debugging output. |
 | `SetTime` | `boolean` | `true` | If enabled, automatically sets the InetBox system time from Home Assistant at startup. |
-
+| `Timezone` | `string` | `Europe/Berlin` | Time zone override if SetTime is enabled
 
 ---
 

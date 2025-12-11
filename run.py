@@ -57,6 +57,7 @@ MIQRO_CONFIG["services"]["truma"]["debug_app"] = ha_options["DebugApp"]
 MIQRO_CONFIG["services"]["truma"]["debug_lin"] = ha_options["DebugLin"]
 MIQRO_CONFIG["services"]["truma"]["debug_protocol"] = ha_options["DebugProtocol"]
 MIQRO_CONFIG["services"]["truma"]["set_time"] = ha_options["SetTime"]
+MIQRO_CONFIG["services"]["truma"]["timezone_override"] = ha_options["Timezone"]
 
 save_yaml(MIQRO_CONFIG, CONFIG_FILE)
 

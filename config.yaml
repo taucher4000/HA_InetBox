@@ -1,6 +1,6 @@
 name: "Inetbox"
 description: "Truma iNet box for controlling the Truma Combi heater"
-version: "0.0.6"
+version: "0.0.7"
 slug: "inet_box"
 init: false
 uart: true
@@ -21,6 +21,7 @@ options:
   DebugLin: false
   DebugProtocol: false
   SetTime: true
+  Timezone: "Europe/Berlin"
 
 schema:
   MQTTBroker: str
@@ -32,3 +33,4 @@ schema:
   DebugLin: bool
   DebugProtocol: bool
   SetTime: bool
+  Timezone: str
