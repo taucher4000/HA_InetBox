@@ -1,3 +1,7 @@
+**[🇩🇪 Deutsche Version der Beschreibung](README_DE.md)**
+
+---
+
 # Home Assistant Add-on: Truma InetBox Emulator
 
 This Home Assistant add-on emulates a **Truma InetBox** to control a **Truma Combi Heater** via a UART LIN adapter.  
