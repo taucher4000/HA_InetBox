@@ -1,0 +1,31 @@
+configuration:
+  MQTTBroker:
+    name: "MQTT Broker"
+    description: "Hostname or service name of your MQTT broker (e.g., core-mosquitto)."
+  MQTTUser:
+    name: "MQTT Username"
+    description: "Optional MQTT username if your broker requires authentication."
+  MQTTPassword:
+    name: "MQTT Password"
+    description: "Optional MQTT password if your broker requires authentication."
+  SerialDevice:
+    name: "Serial Device"
+    description: "Path to the serial device connected to your InetBox (e.g., /dev/serial0)."
+  DefaultTargetTempRoom:
+    name: "Default Target Room Temperature"
+    description: "Default room temperature (°C) sent to the device if no specific value is set."
+  DebugApp:
+    name: "Application Debug"
+    description: "Enable debugging output for the main application logic."
+  DebugLin:
+    name: "LIN Debug"
+    description: "Enable debug output for LIN (Local Interconnect Network) communication."
+  DebugProtocol:
+    name: "Protocol Debug"
+    description: "Enable detailed protocol debugging output."
+  SetTime:
+    name: "Set System Time"
+    description: "Automatically set the InetBox system time from Home Assistant at startup."
+  Timezone:
+    name: "Timezone"
+    description: "Time zone to set on the system when Set Time is enabled."
