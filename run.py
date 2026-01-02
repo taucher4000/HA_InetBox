@@ -12,7 +12,8 @@ import random
 
 CONFIG_FILE = Path("/etc/miqro.yml")
 OPTIONS_FILE = Path("/data/options.json")
-DISCOVERY_DIR = Path("/src/mqtt_auto_discovery_objs/")
+HEATER_DISCOVERY_DIR = Path("/src/mqtt_auto_discovery_objs/heater/")
+AIRCON_DISCOVERY_DIR = Path("/src/mqtt_auto_discovery_objs/aircon/")
 MIQRO_CONFIG = {
     "broker": {
         "host": "core-mosquitto",
@@ -46,6 +47,16 @@ def load_json(path: Path) -> dict:
     with path.open("r", encoding="utf-8") as f:
         return json.load(f)
 
+def ha_discovery(discovery_dir: str, device_payload: dict, client: Any):
+    for filepath in discovery_dir.rglob("*.json"):
+        device_class, topic_id = filepath.stem.split("-", 1)
+        topic = f"homeassistant/{device_class}/truma_{topic_id}__1/config"
+
+        with filepath.open("r", encoding="utf-8") as f:
+            payload = json.load(f)
+        payload["device"] = device_payload
+        client.publish(topic, json.dumps(payload), retain=True)
+
 ha_options = load_json(OPTIONS_FILE)
 
 MIQRO_CONFIG["broker"]["host"] = ha_options["MQTTBroker"]
@@ -65,21 +76,14 @@ client = mqtt_client.Client(f'publish-{random.randint(0, 1000)}')
 client.username_pw_set(ha_options["MQTTUser"], ha_options["MQTTPassword"])
 client.connect(ha_options["MQTTBroker"])
 
-for filepath in DISCOVERY_DIR.rglob("*.json"):
-    device_class, topic_id = filepath.stem.split("-", 1)
-    topic = f"homeassistant/{device_class}/truma_{topic_id}__1/config"
+# create Home Assistant MQTT discovery messages for Heater
+heater_payload = {"identifiers": ["truma_control"], "name": "Truma Control", "model": "Combi", "manufacturer": "Truma"}
+ha_discovery(discovery_dir=HEATER_DISCOVERY_DIR, device_payload=heater_payload,client=client)
 
-    with filepath.open("r", encoding="utf-8") as f:
-        payload = json.load(f)
-
-    payload["device"] = {
-        "identifiers": ["truma_control"],
-        "name": "Truma Control",
-        "model": "Combi",
-        "manufacturer": "Truma"
-    }
-
-    client.publish(topic, json.dumps(payload), retain=True)
+# create Home Assistant MQTT discovery messages for Air Conditioning
+if ha_options["EnableAirConSupport"]:
+    heater_payload = {"identifiers": ["truma_aircon"], "name": "Truma AirCon", "model": "AirCon", "manufacturer": "Truma"}
+    ha_discovery(discovery_dir=AIRCON_DISCOVERY_DIR, device_payload=heater_payload,client=client)
 
 client.disconnect()
 

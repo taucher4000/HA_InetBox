@@ -1,0 +1,9 @@
+{
+    "name": "Air Conditioning Vent Mode",
+    "unique_id": "aircon_vent_mode",
+    "command_topic": "service/truma/set/aircon_vent_mode",
+    "state_topic": "service/truma/control_status/aircon_vent_mode",
+    "options": ["low", "mid", "high", "night", "auto"],
+    "optimistic": true,
+    "icon": "mdi:fan"
+}
