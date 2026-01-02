@@ -23,6 +23,7 @@ options:
   SetTime: true
   Timezone: "Europe/Berlin"
   EnableAirConSupport: false
+  Language: de
 
 schema:
   MQTTBroker: str
@@ -36,3 +37,4 @@ schema:
   SetTime: bool
   Timezone: str
   EnableAirConSupport: bool
+  Language: str
