@@ -7,7 +7,7 @@ import sys
 import os
 from pathlib import Path
 from inetbox import truma_service
-from paho.mqtt import client as mqtt_client
+#from paho.mqtt import client as mqtt_client
 import random
 
 
@@ -48,15 +48,15 @@ def load_json(path: Path) -> dict:
     with path.open("r", encoding="utf-8") as f:
         return json.load(f)
 
-def ha_discovery(discovery_dir: str, device_payload: dict, client: Any):
-    for filepath in discovery_dir.rglob("*.json"):
-        device_class, topic_id = filepath.stem.split("-", 1)
-        topic = f"homeassistant/{device_class}/truma_{topic_id}__1/config"
+#def ha_discovery(discovery_dir: str, device_payload: dict, client: Any):
+#    for filepath in discovery_dir.rglob("*.json"):
+#        device_class, topic_id = filepath.stem.split("-", 1)
+#        topic = f"homeassistant/{device_class}/truma_{topic_id}__1/config"
 
-        with filepath.open("r", encoding="utf-8") as f:
-            payload = json.load(f)
-        payload["device"] = device_payload
-        client.publish(topic, json.dumps(payload), retain=True)
+#        with filepath.open("r", encoding="utf-8") as f:
+#            payload = json.load(f)
+#        payload["device"] = device_payload
+#        client.publish(topic, json.dumps(payload), retain=True)
 
 ha_options = load_json(OPTIONS_FILE)
 
@@ -74,20 +74,20 @@ MIQRO_CONFIG["services"]["truma"]["language"] = ha_options["Language"]
 
 save_yaml(MIQRO_CONFIG, CONFIG_FILE)
 
-client = mqtt_client.Client(f'publish-{random.randint(0, 1000)}')
-client.username_pw_set(ha_options["MQTTUser"], ha_options["MQTTPassword"])
-client.connect(ha_options["MQTTBroker"])
+#client = mqtt_client.Client(f'publish-{random.randint(0, 1000)}')
+#client.username_pw_set(ha_options["MQTTUser"], ha_options["MQTTPassword"])
+#client.connect(ha_options["MQTTBroker"])
 
 # create Home Assistant MQTT discovery messages for Heater
-heater_payload = {"identifiers": ["truma_control"], "name": "Truma Control", "model": "Combi", "manufacturer": "Truma"}
-ha_discovery(discovery_dir=HEATER_DISCOVERY_DIR, device_payload=heater_payload,client=client)
+#heater_payload = {"identifiers": ["truma_control"], "name": "Truma Control", "model": "Combi", "manufacturer": "Truma"}
+#ha_discovery(discovery_dir=HEATER_DISCOVERY_DIR, device_payload=heater_payload,client=client)
 
 # create Home Assistant MQTT discovery messages for Air Conditioning
-if ha_options["EnableAirConSupport"]:
-    heater_payload = {"identifiers": ["truma_aircon"], "name": "Truma AirCon", "model": "AirCon", "manufacturer": "Truma"}
-    ha_discovery(discovery_dir=AIRCON_DISCOVERY_DIR, device_payload=heater_payload,client=client)
+#if ha_options["EnableAirConSupport"]:
+#    heater_payload = {"identifiers": ["truma_aircon"], "name": "Truma AirCon", "model": "AirCon", "manufacturer": "Truma"}
+#    ha_discovery(discovery_dir=AIRCON_DISCOVERY_DIR, device_payload=heater_payload,client=client)
 
-client.disconnect()
+#client.disconnect()
 
 if __name__ == '__main__':
     sys.exit(truma_service.run())
