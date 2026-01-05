@@ -29,3 +29,6 @@ configuration:
   Timezone:
     name: "Timezone"
     description: "Time zone to set on the system when Set Time is enabled."
+  Language:
+    name: "Entity Language"
+    description: "language used for the entity names and values. Possible Options: de (german), en (english)"

@@ -29,3 +29,6 @@ configuration:
   Timezone:
     name: "Zeitzone"
     description: "Zeitzone, die gesetzt wird, wenn ‚Systemzeit setzen‘ aktiv ist."
+  Language:
+    name: "Entitätssprache"
+    description: "Sprache, die für die Namen und Werte der Entitäten verwendet wird. Mögliche Optionen: de (Deutsch), en (Englisch)"
