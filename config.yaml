@@ -1,7 +1,7 @@
 name: "Inetbox (Beta)"
 description: "Truma iNet box for controlling the Truma Combi heater & Air Conditioning"
 version: "0.0.8"
-slug: "inet_box"
+slug: "inet_box_beta"
 init: false
 uart: true
 arch:
@@ -22,7 +22,6 @@ options:
   DebugProtocol: false
   SetTime: true
   Timezone: "Europe/Berlin"
-  EnableAirConSupport: false
   Language: de
 
 schema:
@@ -36,5 +35,4 @@ schema:
   DebugProtocol: bool
   SetTime: bool
   Timezone: str
-  EnableAirConSupport: bool
-  Language: str
+  Language: list(de|en)

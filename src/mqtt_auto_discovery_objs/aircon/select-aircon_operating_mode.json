@@ -1,9 +1,0 @@
-{
-    "name": "Air Conditioning Operating Mode",
-    "unique_id": "aircon_operating_mode",
-    "command_topic": "service/truma/set/aircon_operating_mode",
-    "state_topic": "service/truma/control_status/aircon_operating_mode",
-    "options": ["off", "vent", "cool", "hot", "auto"],
-    "optimistic": true,
-    "icon": "mdi:air-conditioner"
-}
