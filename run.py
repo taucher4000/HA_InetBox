@@ -10,8 +10,7 @@ import random
 
 CONFIG_FILE = Path("/etc/miqro.yml")
 OPTIONS_FILE = Path("/data/options.json")
-HEATER_DISCOVERY_DIR = Path("/src/mqtt_auto_discovery_objs/heater/")
-AIRCON_DISCOVERY_DIR = Path("/src/mqtt_auto_discovery_objs/aircon/")
+
 MIQRO_CONFIG = {
     "broker": {
         "host": "core-mosquitto",
