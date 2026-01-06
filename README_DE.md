@@ -60,6 +60,7 @@ Nachfolgend findest du alle verfügbaren Optionen und ihre Bedeutung:
 | `DebugProtocol` | `boolean` | `false` | Aktiviert detaillierte Debug-Ausgaben des Protokolls. |
 | `SetTime` | `boolean` | `true` | Wenn aktiviert, wird die Systemzeit der InetBox beim Start automatisch von Home Assistant gesetzt. |
 | `Timezone` | `string` | `Europe/Berlin` | Zeitzonen-Override, wenn `SetTime` aktiviert ist |
+| `Language` | `list` | `de` |  Sprache, die für die Namen und Werte der Entitäten verwendet wird. Mögliche Optionen: de (Deutsch), en (Englisch). |
 
 ---
 

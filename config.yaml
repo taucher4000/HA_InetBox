@@ -23,6 +23,7 @@ options:
   SetTime: true
   Timezone: "Europe/Berlin"
   Language: de
+  Optimistic: false
 
 schema:
   MQTTBroker: str
@@ -36,3 +37,4 @@ schema:
   SetTime: bool
   Timezone: str
   Language: list(de|en)
+  Optimistic: bool
