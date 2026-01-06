@@ -32,3 +32,6 @@ configuration:
   Language:
     name: "Entity Language"
     description: "language used for the entity names and values. Possible Options: de (german), en (english)"
+  Optimistic:
+    name: "Optimistic Mode"
+    description: "Enable MQTT optimistic mode. When enabled, commands are assumed successful even if no confirmation is received from the device."
