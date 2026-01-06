@@ -4,6 +4,8 @@ version: "0.0.8"
 slug: "inet_box_beta"
 init: false
 uart: true
+watchdog: true
+
 arch:
   - aarch64
   - amd64
