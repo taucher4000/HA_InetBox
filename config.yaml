@@ -1,6 +1,6 @@
 name: "Inetbox"
 description: "Truma iNet box for controlling the Truma Combi heater & Air Conditioning"
-version: "0.0.9"
+version: "1.0.0"
 slug: "inet_box"
 init: false
 uart: true
