@@ -33,12 +33,19 @@ With this add-on, you can control your Truma heating system directly from Home A
 
 ## 🚀 Installation
 
+### Quick Installation (Home Assistant)
+
+Click the button below to open the add-on directly in your Home Assistant instance.
+
+[![Open your Home Assistant instance and show the dashboard of an add-on.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?repository_url=https%3A%2F%2Fgithub.com%2Ftaucher4000%2FHA_AddOns&addon=2dcb6172_inet_box)
+
+
+### Manual Installation
+
 1. In **Home Assistant**, go to **Settings → Add-ons → Add-on Store**  
 2. Click the **⋮ (three dots)** menu in the top right and choose **Repositories**  
-3. Add the repository URL: `https://github.com/taucher4000/HA_InetBox`
+3. Add the repository URL:  `https://github.com/taucher4000/HA_AddOns`
 4. Return to the Add-on Store, locate **InetBox**, and install it  
-5. After installation, click **Start** to launch the add-on  
-6. *(Optional)* Check the **Logs** tab to verify successful startup
 
 ---
 
@@ -59,6 +66,7 @@ Below is a list of all available options and their meaning.
 | `DebugProtocol` | `boolean` | `false` | Enables detailed protocol debugging output. |
 | `SetTime` | `boolean` | `true` | If enabled, automatically sets the InetBox system time from Home Assistant at startup. |
 | `Timezone` | `string` | `Europe/Berlin` | Time zone override if SetTime is enabled
+| `Language` | `list` | `de` |  language used for the entity names and values. Possible Options: de (german), en (english). |
 
 ---
 
