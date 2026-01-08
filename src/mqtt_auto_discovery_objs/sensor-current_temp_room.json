@@ -1,8 +1,0 @@
-{
-    "name": "Current Temperature Room",
-    "unique_id": "current_temp_room",
-    "device_class": "temperature",
-    "unit_of_measurement": "°C",
-    "state_topic": "service/truma/control_status/current_temp_room",
-    "icon": "mdi:home-thermometer-outline"
-}

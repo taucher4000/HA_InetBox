@@ -67,6 +67,7 @@ Below is a list of all available options and their meaning.
 | `SetTime` | `boolean` | `true` | If enabled, automatically sets the InetBox system time from Home Assistant at startup. |
 | `Timezone` | `string` | `Europe/Berlin` | Time zone override if SetTime is enabled
 | `Language` | `list` | `de` |  language used for the entity names and values. Possible Options: de (german), en (english). |
+| `Optimistic` | `boolean` | `false` | Enable MQTT optimistic mode. When enabled, commands are assumed successful even if no confirmation is received from the device.
 
 ---
 

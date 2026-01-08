@@ -3,16 +3,14 @@
 import json
 import yaml
 import sys
-import os
 from pathlib import Path
 from inetbox import truma_service
-from paho.mqtt import client as mqtt_client
 import random
 
 
 CONFIG_FILE = Path("/etc/miqro.yml")
 OPTIONS_FILE = Path("/data/options.json")
-DISCOVERY_DIR = Path("/src/mqtt_auto_discovery_objs/")
+
 MIQRO_CONFIG = {
     "broker": {
         "host": "core-mosquitto",
@@ -58,30 +56,10 @@ MIQRO_CONFIG["services"]["truma"]["debug_lin"] = ha_options["DebugLin"]
 MIQRO_CONFIG["services"]["truma"]["debug_protocol"] = ha_options["DebugProtocol"]
 MIQRO_CONFIG["services"]["truma"]["set_time"] = ha_options["SetTime"]
 MIQRO_CONFIG["services"]["truma"]["timezone_override"] = ha_options["Timezone"]
+MIQRO_CONFIG["services"]["truma"]["language"] = ha_options["Language"]
+MIQRO_CONFIG["services"]["truma"]["optimistic"] = ha_options["Optimistic"]
 
 save_yaml(MIQRO_CONFIG, CONFIG_FILE)
-
-client = mqtt_client.Client(f'publish-{random.randint(0, 1000)}')
-client.username_pw_set(ha_options["MQTTUser"], ha_options["MQTTPassword"])
-client.connect(ha_options["MQTTBroker"])
-
-for filepath in DISCOVERY_DIR.rglob("*.json"):
-    device_class, topic_id = filepath.stem.split("-", 1)
-    topic = f"homeassistant/{device_class}/truma_{topic_id}__1/config"
-
-    with filepath.open("r", encoding="utf-8") as f:
-        payload = json.load(f)
-
-    payload["device"] = {
-        "identifiers": ["truma_control"],
-        "name": "Truma Control",
-        "model": "Combi",
-        "manufacturer": "Truma"
-    }
-
-    client.publish(topic, json.dumps(payload), retain=True)
-
-client.disconnect()
 
 if __name__ == '__main__':
     sys.exit(truma_service.run())
