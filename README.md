@@ -37,14 +37,14 @@ With this add-on, you can control your Truma heating system directly from Home A
 
 Click the button below to open the add-on directly in your Home Assistant instance.
 
-[![Open your Home Assistant instance and show the dashboard of an add-on.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?repository_url=https%3A%2F%2Fgithub.com%2Ftaucher4000%2FHA_AddOns&addon=2dcb6172_inet_box)
+[![Open your Home Assistant instance and show the dashboard of an add-on.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?repository_url=https%3A%2F%2Fgithub.com%2Ftaucher4000%2FHA_InetBox&addon=2dcb6172_inet_box)
 
 
 ### Manual Installation
 
 1. In **Home Assistant**, go to **Settings → Add-ons → Add-on Store**  
 2. Click the **⋮ (three dots)** menu in the top right and choose **Repositories**  
-3. Add the repository URL:  `https://github.com/taucher4000/HA_AddOns`
+3. Add the repository URL:  `https://github.com/taucher4000/HA_InetBox`
 4. Return to the Add-on Store, locate **InetBox**, and install it  
 
 ---
